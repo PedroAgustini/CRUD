@@ -10,18 +10,20 @@ function App() {
   
   useEffect(() => {
     axios.get(`https://users-crud1.herokuapp.com/users/`)
-    .then((res) => setUsers(res.data));
+    .then((res) => setUsers(res.data))
   },[])
 
   const getUsers = () => {
     axios.get(`https://users-crud1.herokuapp.com/users/`)
-    .then((res) => setUsers(res.data));
+    .then((res) => setUsers(res.data))
   }
 
   return (
     <div className="App">
+      <div className="app-flex">
       <UsersForm getUsers={getUsers}/>
       <UsersList users={users}/>
+      </div>
     </div>
   )
 }
